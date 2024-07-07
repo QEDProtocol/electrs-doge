@@ -12,7 +12,7 @@ Install Rust, Dogecoin Core (no `txindex` needed) and the `clang` and `cmake` pa
 
 ```bash
 $ git clone https://github.com/QEDProtocol/electrs-doge && cd electrs-doge
-$ cargo run --release --bin electrs -- -vvvv --daemon-dir ~/.bitcoin
+$ cargo run --release --bin electrs -- -vvvv --daemon-dir ~/.dogecoin
 ```
 
 See [electrs's original documentation](https://github.com/romanz/electrs/blob/master/doc/usage.md) for more detailed instructions.
