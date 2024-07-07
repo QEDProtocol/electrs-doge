@@ -2,33 +2,26 @@
 
 A block chain index engine and HTTP API written in Rust based on [romanz/electrs](https://github.com/romanz/electrs).
 
-Used as the backend for the [Esplora block explorer](https://github.com/Blockstream/esplora) powering [blockstream.info](https://blockstream.info/).
-
 API documentation [is available here](https://github.com/blockstream/esplora/blob/master/API.md).
 
 Documentation for the database schema and indexing process [is available here](doc/schema.md).
 
 ### Installing & indexing
 
-Install Rust, Bitcoin Core (no `txindex` needed) and the `clang` and `cmake` packages, then:
+Install Rust, Dogecoin Core (no `txindex` needed) and the `clang` and `cmake` packages, then:
 
 ```bash
-$ git clone https://github.com/blockstream/electrs && cd electrs
-$ git checkout new-index
+$ git clone https://github.com/QEDProtocol/electrs-doge && cd electrs-doge
 $ cargo run --release --bin electrs -- -vvvv --daemon-dir ~/.bitcoin
-
-# Or for liquid:
-$ cargo run --features liquid --release --bin electrs -- -vvvv --network liquid --daemon-dir ~/.liquid
 ```
 
 See [electrs's original documentation](https://github.com/romanz/electrs/blob/master/doc/usage.md) for more detailed instructions.
 Note that our indexes are incompatible with electrs's and has to be created separately.
 
-The indexes require 610GB of storage after running compaction (as of June 2020), but you'll need to have
+The indexes require ~500GB of storage after running compaction (as of July 2024), but you'll need to have
 free space of about double that available during the index compaction process.
 Creating the indexes should take a few hours on a beefy machine with SSD.
 
-To deploy with Docker, follow the [instructions here](https://github.com/Blockstream/esplora#how-to-build-the-docker-image).
 
 ### Light mode
 
